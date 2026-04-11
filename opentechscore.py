@@ -1,6 +1,6 @@
 # =============================================================================
 # TechScore Stock Analyzer
-# Copyright (C) 2024  Contributors
+# Copyright (C) 2026  Contributors
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -15,7 +15,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
-# Project: https://github.com/your-org/techscore-stock-analyzer
+# Project: https://github.com/tsiwt/openstocktechscore
 # Version: 1.3.0
 # Description:
 #   A daily technical-indicator based stock scoring system.
