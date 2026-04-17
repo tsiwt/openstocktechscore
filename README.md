@@ -9,6 +9,17 @@
 
 ---
 
+## 🌐 在线体验（Streamlit Web 版）
+
+无需安装，浏览器直接使用：
+
+👉 **[https://openstocktechscore-bxazgutj8uj9rritwy8bmd.streamlit.app/](https://openstocktechscore-bxazgutj8uj9rritwy8bmd.streamlit.app/)**
+
+> ⚠️ Web 版部署在海外服务器，baostock / easyquotation 等国内数据源连接可能不稳定。  
+> 如需稳定使用，建议本地运行桌面版或在国内服务器部署。
+
+---
+
 ## ⚠️ 重要声明
 
 **本项目纯属个人学术研究与技术学习，严禁用于任何实际投资决策。**
@@ -23,9 +34,24 @@
 
 ---
 
+## 两个版本
+
+| | 🖥️ 桌面版 | 🌐 Web 版 |
+|---|---|---|
+| 入口文件 | `opentechscore.py` | `streamlit_capp.py` |
+| 界面框架 | PyQt5 | Streamlit |
+| 运行方式 | 本地运行 | 浏览器访问 / 本地运行 |
+| 实时行情 | ✅ 稳定 | ⚠️ 海外服务器可能不稳定 |
+| 双击跳转K线图 | ✅ | — |
+| 筛选 & 排序 | ✅ | ✅ |
+| 综合分分布图 | — | ✅ |
+| 适用场景 | 日常使用 | 快速演示 / 分享 |
+
+---
+
 ## 界面截图
 
-**主界面（评分结果）**
+**桌面版主界面（评分结果）**
 
 ![主界面](screenshots/main.png)
 
@@ -42,8 +68,9 @@
 - 计算10个常用技术指标，生成综合评分（0～100分）
 - 结果自动保存为带时间戳的 CSV 文件
 - 支持加载历史评分结果，并一键刷新实时行情
-- 双击任意股票行，直接跳转新浪财经K线图
-- 启动时自动加载最新一次历史评分结果
+- 双击任意股票行，直接跳转新浪财经K线图（桌面版）
+- 启动时自动加载最新一次历史评分结果（桌面版）
+- 浏览器在线使用，支持上传/下载 CSV（Web 版）
 
 ---
 
@@ -66,8 +93,42 @@
 
 ---
 
-## 安装依赖
+## 安装 & 运行
+
+### 桌面版（PyQt5）
 
 ```bash
 pip install pandas numpy baostock PyQt5 easyquotation
+python opentechscore.py
+```
 
+### Web 版（Streamlit）本地运行
+
+```bash
+pip install -r requirements.txt
+streamlit run streamlit_capp.py
+```
+
+浏览器会自动打开 `http://localhost:8501`。
+
+---
+
+## 项目文件说明
+
+```
+openstocktechscore/
+├── opentechscore.py        # 桌面版入口（PyQt5）
+├── streamlit_capp.py       # Web 版入口（Streamlit）
+├── requirements.txt        # Web 版 Python 依赖
+├── README.md
+├── LICENSE
+└── screenshots/
+    ├── main.png
+    └── techexplain.png
+```
+
+---
+
+## License
+
+[GNU General Public License v3.0](LICENSE)
